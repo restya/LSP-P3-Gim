@@ -1,13 +1,486 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LSP Gim Indonesia</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LSP P3 Pengembang Gim Indonesia</title>
+  <link rel="stylesheet" href="/src/index.css" />
+</head>
+<body class="min-h-screen bg-[#FDFCFB] text-[#0F1110] font-sans selection:bg-[#FF3333]">
+  <nav class="fixed w-full bg-[#FDFCFB]/95 backdrop-blur-md border-b border-[#0F1110]/10 z-50 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center gap-3">
+          <div class="flex items-center justify-center w-8 h-8 bg-[#0F1110] text-[#FF3333] rounded-full">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
+          </div>
+          <span class="font-bold text-xl tracking-tight leading-none uppercase">
+            LSP P3<br />
+            <span class="text-[10px] font-bold tracking-widest text-[#0F1110]/50">Pengembang Gim</span>
+          </span>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-8 text-[10px] font-bold uppercase tracking-[0.2em]">
+          <a href="#tentang" class="hover:text-[#0F1110]/50 transition-colors">Tentang</a>
+          <a href="#skema" class="hover:text-[#0F1110]/50 transition-colors">Skema</a>
+          <a href="#tim" class="hover:text-[#0F1110]/50 transition-colors">Tim</a>
+          <a href="#roadmap" class="hover:text-[#0F1110]/50 transition-colors">Roadmap</a>
+          <a href="#kontak" class="hover:text-[#0F1110]/50 transition-colors">Kontak</a>
+        </div>
+
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-[#0F1110] hover:text-[#0F1110]/50 focus:outline-none">
+            <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#FDFCFB] border-b border-[#0F1110]/10 shadow-xl absolute w-full">
+      <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3 flex flex-col border-t border-[#0F1110]/10">
+        <a href="#tentang" class="mobile-link block px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#0F1110] hover:bg-[#FF3333]/20 transition-colors">Tentang</a>
+        <a href="#skema" class="mobile-link block px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#0F1110] hover:bg-[#FF3333]/20 transition-colors">Skema</a>
+        <a href="#tim" class="mobile-link block px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#0F1110] hover:bg-[#FF3333]/20 transition-colors">Tim</a>
+        <a href="#roadmap" class="mobile-link block px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#0F1110] hover:bg-[#FF3333]/20 transition-colors">Roadmap</a>
+        <a href="#kontak" class="mobile-link block px-4 py-3 text-xs font-bold uppercase tracking-widest text-[#0F1110] hover:bg-[#FF3333]/20 transition-colors">Kontak</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 px-4 bg-[#FDFCFB] overflow-hidden flex flex-col justify-center min-h-[90vh]">
+      <div class="max-w-7xl mx-auto w-full relative">
+        <div class="relative z-10 flex flex-col items-start max-w-5xl">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] mb-6 text-[#FF3333] bg-[#0F1110] inline-flex px-3 py-1.5 items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            Sertifikasi Standar Industri Game
+          </p>
+          
+          <h1 class="text-[64px] sm:text-[80px] md:text-[112px] leading-[0.85] font-black tracking-tighter uppercase mb-8">
+            Accelerating<br />
+            <span class="text-transparent stroke-black" style="-webkit-text-stroke: 1px #0F1110;">The Growth of</span><br />
+            Indonesian Game
+          </h1>
+          
+          <p class="text-xl md:text-3xl leading-tight font-medium max-w-2xl text-[#0F1110]/70 mb-12">
+            Lembaga Sertifikasi Profesi (LSP) P3 Pengembang Gim Indonesia mengukuhkan talenta-talenta terbaik demi standar kompetensi berkelas dunia.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto border-t border-[#0F1110] pt-8">
+            <a href="#skema" class="inline-flex items-center justify-center gap-2 px-8 py-5 bg-[#0F1110] text-[#FDFCFB] text-[10px] font-bold uppercase tracking-widest hover:bg-[#0F1110]/80 transition">
+              Lihat Skema Sertifikasi
+            </a>
+            <a href="#tentang" class="inline-flex items-center justify-center px-8 py-5 bg-transparent text-[#0F1110] border border-[#0F1110] text-[10px] font-bold uppercase tracking-widest hover:bg-[#FF3333] transition">
+              Pelajari Lebih Lanjut
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="py-24 bg-[#FDFCFB] border-t border-[#0F1110]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div class="flex flex-col">
+            <h2 class="text-[48px] sm:text-[64px] font-black tracking-tighter uppercase leading-none mb-8">
+              Tentang<br />
+              <span class="text-transparent stroke-black" style="-webkit-text-stroke: 1px #0F1110;">LSP P3 Gim</span>
+            </h2>
+            <p class="text-xl font-medium leading-tight text-[#0F1110]/70 mb-8">
+              LSP P3 Pengembang Gim Indonesia adalah sebuah Lembaga Sertifikasi Profesi yang bergerak di subsektor Pengembangan Gim (Game Development) untuk memastikan adanya sebuah standar dari talenta di industri gim indonesia.
+            </p>
+            <p class="text-sm font-medium leading-relaxed text-[#0F1110]/70 mb-12">
+              Pembuatan LSP P3 Pengembang Gim Indonesia merupakan kelanjutan dari proses implementasi dan manfaat pembuatan KKNI Video Gim Indonesia. Inisiatif ini juga didukung oleh Asosiasi Game Indonesia (AGI) sebagai bentuk dukungan untuk pengembangan talenta game developer lokal.
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-[#0F1110] pt-8">
+              <div class="flex flex-col gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#0F1110]"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                <div class="flex flex-col">
+                  <h3 class="text-[10px] font-bold uppercase tracking-widest mb-2">Standar Kompetensi</h3>
+                  <span class="text-sm font-medium text-[#0F1110]/70">Sertifikasi berstandar nasional dan industri</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#0F1110]"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                <div class="flex flex-col">
+                  <h3 class="text-[10px] font-bold uppercase tracking-widest mb-2">Dukungan Industri</h3>
+                  <span class="text-sm font-medium text-[#0F1110]/70">Disokong oleh AGI dan studio terkemuka</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border border-[#0F1110] p-8 sm:p-12 bg-[#FF3333]/10">
+            <div class="flex items-center gap-4 border-b border-[#0F1110] pb-6 mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#0F1110]"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2-1 4-2 7-2 2.14 0 5.4.56 7 2a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <h3 class="text-xl font-bold tracking-tight uppercase">Landasan Hukum & Legalitas</h3>
+            </div>
+            <ul class="space-y-4">
+              <li class="flex gap-4 text-sm font-medium leading-relaxed text-[#0F1110]/80">
+                <span class="text-[#0F1110] font-black">/</span>
+                <span>Perpres No. 19/2024 tentang Percepatan Pengembangan Industri Gim Nasional</span>
+              </li>
+              <li class="flex gap-4 text-sm font-medium leading-relaxed text-[#0F1110]/80">
+                <span class="text-[#0F1110] font-black">/</span>
+                <span>Kepmenaker No. 172/2024 tentang Penetapan SKKNI Bidang Keahlian Pengembangan Video Game</span>
+              </li>
+              <li class="flex gap-4 text-sm font-medium leading-relaxed text-[#0F1110]/80">
+                <span class="text-[#0F1110] font-black">/</span>
+                <span>Kepmen Parekraf No.100/2024 tentang Penetapan Kerangka  Kualifikasi Nasional Bidang Keahlian Video Game</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schemes Section -->
+    <section id="skema" class="py-24 bg-[#FDFCFB] border-t border-[#0F1110]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16 border-b border-[#0F1110] pb-8">
+          <h2 class="text-[48px] sm:text-[80px] font-black tracking-tighter uppercase leading-none mb-6">Skema<br/><span class="text-transparent stroke-black" style="-webkit-text-stroke: 1px #0F1110;">Sertifikasi</span></h2>
+          <p class="text-xl font-medium max-w-2xl text-[#0F1110]/70">
+            Skema yang tersedia meliputi berbagai bidang dalam pengembangan gim, disesuaikan dengan 
+            Standar Kompetensi Kerja Nasional Indonesia (SKKNI).
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <div class="flex flex-col border border-[#0F1110] p-8 sm:p-12 hover:bg-[#FF3333] transition-colors group">
+            <div class="flex justify-between items-start mb-12">
+              <h3 class="text-3xl font-black uppercase tracking-tighter w-2/3 leading-tight">Game Programming</h3>
+              <div class="w-16 h-16 rounded-full border border-[#0F1110] flex items-center justify-center bg-[#FDFCFB] group-hover:bg-[#0F1110] group-hover:text-[#FDFCFB] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+              </div>
+            </div>
+            
+            <ul class="flex flex-col gap-0 border-t border-[#0F1110]/20 pt-6">
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">01</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat III - Junior Game Programmer</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">02</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat IV - Game Programmer</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">03</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat V - Senior Game Programmer</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">04</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat VI - Lead Game Programmer</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-col border border-[#0F1110] p-8 sm:p-12 hover:bg-[#FF3333] transition-colors group">
+            <div class="flex justify-between items-start mb-12">
+              <h3 class="text-3xl font-black uppercase tracking-tighter w-2/3 leading-tight">Game Art & Animation</h3>
+              <div class="w-16 h-16 rounded-full border border-[#0F1110] flex items-center justify-center bg-[#FDFCFB] group-hover:bg-[#0F1110] group-hover:text-[#FDFCFB] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+              </div>
+            </div>
+            
+            <ul class="flex flex-col gap-0 border-t border-[#0F1110]/20 pt-6">
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">01</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat III - Junior 2D Game Artist</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">02</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat III - Junior 3D Game Artist</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">03</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat IV - 2D Game Artist</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">04</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat IV - 3D Game Artist</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">05</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat IV - 3D Game Animator</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">06</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat V - Senior 2D/3D Game Artist</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">07</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat V - Senior 2D/3D Game Animator</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">08</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat VI - Technical Artist</span>
+              </li>
+              <li class="flex items-center gap-4 py-3 border-b border-[#0F1110]/10 last:border-0 group-hover:border-[#0F1110]/30 transition-colors">
+                <span class="text-[10px] font-bold font-mono">09</span>
+                <span class="text-sm font-bold uppercase tracking-wide">Tingkat VI - Lead Game Artist</span>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="tim" class="py-24 bg-[#FDFCFB] border-t border-[#0F1110]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-end border-b border-[#0F1110] pb-8 mb-16 gap-8">
+          <div class="max-w-xl">
+            <h2 class="text-[48px] sm:text-[80px] font-black tracking-tighter uppercase leading-none mb-6">Struktur<br/><span class="text-transparent stroke-black" style="-webkit-text-stroke: 1px #0F1110;">Kepengurusan</span></h2>
+            <p class="text-xl font-medium text-[#0F1110]/70">
+              Didukung oleh para profesional yang berdedikasi memajukan ekosistem talenta pengembang gim.
+            </p>
+          </div>
+          <div class="text-[10px] font-bold uppercase tracking-widest px-4 py-2 bg-[#0F1110] text-[#FF3333]">
+            Tim Inti LSP
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#0F1110] border border-[#0F1110]">
+          
+          <div class="bg-[#FDFCFB] p-8 flex flex-col hover:bg-[#FF3333]/10 transition-colors">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#0F1110]/50 mb-8 border-b border-[#0F1110]/10 pb-4">Dewan Pengarah</span>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">CA</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Cipto Adiguno</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">SH</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Shafiq Husein</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">AG</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Asosiasi Game Indonesia</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-[#FDFCFB] p-8 flex flex-col hover:bg-[#FF3333]/10 transition-colors">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#0F1110]/50 mb-8 border-b border-[#0F1110]/10 pb-4">Ketua / Direktur LSP</span>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">AF</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Ardhan Fadhlurrahman</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#FDFCFB] p-8 flex flex-col hover:bg-[#FF3333]/10 transition-colors">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#0F1110]/50 mb-8 border-b border-[#0F1110]/10 pb-4">Wakil Ketua / Wakil Direktur</span>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">FN</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Febrianto Nur Anwari</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#FDFCFB] p-8 flex flex-col hover:bg-[#FF3333]/10 transition-colors">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#0F1110]/50 mb-8 border-b border-[#0F1110]/10 pb-4">Komite Skema</span>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">RW</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Restya Winda Astari</span>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">IS</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Iwan Sonjaya</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#FDFCFB] p-8 flex flex-col hover:bg-[#FF3333]/10 transition-colors">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#0F1110]/50 mb-8 border-b border-[#0F1110]/10 pb-4">Bagian Administrasi</span>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">IR</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Ibnu Raziq</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#FDFCFB] p-8 flex flex-col hover:bg-[#FF3333]/10 transition-colors">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#0F1110]/50 mb-8 border-b border-[#0F1110]/10 pb-4">Bidang Standarisasi</span>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">MA</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Muhammad Al Mukhlishiddin</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#FDFCFB] p-8 flex flex-col hover:bg-[#FF3333]/10 transition-colors">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#0F1110]/50 mb-8 border-b border-[#0F1110]/10 pb-4">Bidang Sertifikasi</span>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">AD</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Andy D. Dirgantara</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#FDFCFB] p-8 flex flex-col hover:bg-[#FF3333]/10 transition-colors">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-[#0F1110]/50 mb-8 border-b border-[#0F1110]/10 pb-4">Bidang Manajemen Mutu</span>
+            <div class="flex flex-col gap-6">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-full border border-[#0F1110] flex items-center justify-center font-black text-xs uppercase bg-[#0F1110] text-[#FF3333] flex-shrink-0">KN</div>
+                <span class="font-bold text-sm tracking-wide uppercase leading-tight">Ken Natasha Violeta</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-24 bg-[#0F1110] text-[#FDFCFB] scroll-mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="border-b border-[#FDFCFB]/20 pb-8 mb-16 flex flex-col">
+          <p class="text-[10px] font-bold uppercase tracking-widest text-[#FF3333] mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M18 6H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h13l4-3.5L18 6Z"/><path d="M12 13v8"/><path d="M12 3v3"/></svg>
+            Five Year Plan
+          </p>
+          <h2 class="text-[48px] sm:text-[80px] font-black tracking-tighter uppercase leading-none mb-6">Peta Jalan<br/><span class="text-transparent" style="-webkit-text-stroke: 1px #FDFCFB;">Strategis</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 border-t border-l border-[#FDFCFB]/20">
+          
+          <div class="p-8 border-r border-b border-[#FDFCFB]/20 hover:bg-[#FF3333]/10 transition-colors group flex flex-col">
+            <div class="flex justify-between items-center mb-8 border-b border-[#FDFCFB]/20 pb-4">
+              <h3 class="text-xl font-bold uppercase">Tahun Pertama</h3>
+              <span class="text-[10px] font-bold uppercase tracking-widest opacity-50 font-mono text-[#FF3333]">01</span>
+            </div>
+            <ul class="flex flex-col gap-4 text-sm font-medium text-[#FDFCFB]/70">
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">3 TUK Sewaktu</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">6 Asesor Kompetensi</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">3 Skema</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">Minimal 600 Asesi</span></li>
+            </ul>
+          </div>
+          
+          <div class="p-8 border-r border-b border-[#FDFCFB]/20 hover:bg-[#FF3333]/10 transition-colors group flex flex-col">
+            <div class="flex justify-between items-center mb-8 border-b border-[#FDFCFB]/20 pb-4">
+              <h3 class="text-xl font-bold uppercase">Tahun Kedua</h3>
+              <span class="text-[10px] font-bold uppercase tracking-widest opacity-50 font-mono text-[#FF3333]">02</span>
+            </div>
+            <ul class="flex flex-col gap-4 text-sm font-medium text-[#FDFCFB]/70">
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">5 TUK Sewaktu</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">Minimal 900 Asesi</span></li>
+            </ul>
+          </div>
+
+          <div class="p-8 border-r border-b border-[#FDFCFB]/20 hover:bg-[#FF3333]/10 transition-colors group flex flex-col">
+            <div class="flex justify-between items-center mb-8 border-b border-[#FDFCFB]/20 pb-4">
+              <h3 class="text-xl font-bold uppercase">Tahun Ketiga</h3>
+              <span class="text-[10px] font-bold uppercase tracking-widest opacity-50 font-mono text-[#FF3333]">03</span>
+            </div>
+            <ul class="flex flex-col gap-4 text-sm font-medium text-[#FDFCFB]/70">
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">7 TUK Sewaktu</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">1 TUK Lokasi</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">+6 Asesor Kompetensi</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">+3 Skema</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">Minimal 2000 Asesi</span></li>
+            </ul>
+          </div>
+
+          <div class="p-8 border-r border-b border-[#FDFCFB]/20 hover:bg-[#FF3333]/10 transition-colors group flex flex-col">
+            <div class="flex justify-between items-center mb-8 border-b border-[#FDFCFB]/20 pb-4">
+              <h3 class="text-xl font-bold uppercase">Tahun Keempat</h3>
+              <span class="text-[10px] font-bold uppercase tracking-widest opacity-50 font-mono text-[#FF3333]">04</span>
+            </div>
+            <ul class="flex flex-col gap-4 text-sm font-medium text-[#FDFCFB]/70">
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">10 TUK Sewaktu</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">2 TUK Lokasi</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">Minimal 3000 Asesi</span></li>
+            </ul>
+          </div>
+
+          <div class="p-8 border-r border-b border-[#FDFCFB]/20 hover:bg-[#FF3333]/10 transition-colors group flex flex-col">
+            <div class="flex justify-between items-center mb-8 border-b border-[#FDFCFB]/20 pb-4">
+              <h3 class="text-xl font-bold uppercase">Tahun Kelima</h3>
+              <span class="text-[10px] font-bold uppercase tracking-widest opacity-50 font-mono text-[#FF3333]">05</span>
+            </div>
+            <ul class="flex flex-col gap-4 text-sm font-medium text-[#FDFCFB]/70">
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">12 TUK Sewaktu</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">3 TUK Lokasi</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">+10 Asesor Kompetensi</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">+5 Skema</span></li>
+              <li class="flex gap-3 items-start"><span class="text-[#FF3333] font-black mt-0.5">/</span><span class="uppercase tracking-wide leading-snug">Minimal 4000 Asesi</span></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="kontak" class="bg-[#0F1110] text-[#FDFCFB] pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 border-t border-[#FDFCFB]/20 pt-16 mb-24">
+        <div class="flex flex-col">
+          <div class="flex items-center gap-3 mb-8 text-[#FF3333]">
+            <div class="flex items-center justify-center w-12 h-12 border border-[#FF3333] rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
+            </div>
+            <span class="font-bold text-2xl tracking-tight leading-none uppercase text-[#FDFCFB]">
+              LSP P3<br />
+              <span class="text-[10px] font-bold tracking-widest text-[#FDFCFB]/50">Pengembang Gim</span>
+            </span>
+          </div>
+          <p class="text-xl font-medium text-[#FDFCFB]/70 max-w-sm leading-tight">
+            Membangun fondasi kualitas dan kapasitas talenta pengembang gim di seluruh Indonesia menuju standar internasional.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
+          <div class="flex flex-col">
+            <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-[#FF3333]">Hubungi Kami</h3>
+            <ul class="flex flex-col gap-6 text-xs font-bold uppercase tracking-widest text-[#FDFCFB]/70">
+              <li class="flex gap-4 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-[#FF3333]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>(021) 5890 5002</span>
+              </li>
+              <li class="flex gap-4 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-[#FF3333]"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <a href="mailto:contact@agi.or.id" class="hover:text-[#FF3333] transition">contact@agi.or.id</a>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col">
+            <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-6 text-[#FF3333]">Lokasi</h3>
+            <ul class="flex flex-col gap-6 text-xs font-bold uppercase tracking-widest text-[#FDFCFB]/70">
+              <li class="flex gap-4 items-start">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-[#FF3333] flex-shrink-0"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span class="leading-relaxed">Infiniti Office, Menara Cakrawala Lt 12, Unit 05A, Jl. M.H. Thamrin No.9, RT 002, RW 001, Kelurahan Kebon Sirih, Kecamatan Menteng, Jakarta Pusat, Kode Pos 10340</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-[#FDFCFB]/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-[#FDFCFB]/50">
+        <span>&copy; <script>document.write(new Date().getFullYear())</script> LSP P3 Pengembang Gim Indonesia</span>
+        <div class="flex gap-8">
+          <a href="https://bit.ly/infiniti-st2" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF3333] transition">Google Maps</a>
+          <a href="https://www.lspgim.id" target="_blank" rel="noopener noreferrer" class="hover:text-[#FF3333] transition">www.lspgim.id</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/src/main.ts" type="module"></script>
+</body>
 </html>
 
