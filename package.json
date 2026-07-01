@@ -1,0 +1,12 @@
+{
+  "name": "lsp-gim-static",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "serve . -p 3000",
+    "build": "mkdir -p dist && cp index.html styles.css script.js dist/ 2>/dev/null || true && cp -r assets dist/ 2>/dev/null || true"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}
